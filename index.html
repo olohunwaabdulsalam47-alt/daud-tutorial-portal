@@ -1,0 +1,482 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAUD TUTORIAL PORTAL</title>
+  <meta name="description" content="Daud Tutorial Portal - Learning Today. Leading Tomorrow.">
+  <meta name="theme-color" content="#123d2a">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f8f8f3;
+      color: #203328;
+      line-height: 1.6;
+    }
+
+    :root {
+      --green: #123d2a;
+      --green2: #1c563a;
+      --gold: #d6aa45;
+      --white: #ffffff;
+      --light: #f8f8f3;
+    }
+
+    header {
+      background: var(--green);
+      color: white;
+      padding: 15px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .login-btn {
+      background: var(--gold);
+      color: var(--green);
+      padding: 9px 15px;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #123d2a, #286044);
+      color: white;
+      padding: 85px 7%;
+      text-align: center;
+    }
+
+    .hero .tag {
+      color: var(--gold);
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 54px);
+      margin: 15px 0;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 25px;
+      color: #e6eee8;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green);
+      padding: 12px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    .btn-outline {
+      border: 1px solid white;
+      color: white;
+      padding: 12px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 5px;
+    }
+
+    section {
+      padding: 65px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 30px;
+      color: var(--green);
+    }
+
+    .section-title p {
+      color: #68756c;
+    }
+
+    .about {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about p {
+      margin-bottom: 15px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      border: 1px solid #e5e8df;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+    }
+
+    .card h3 {
+      color: var(--green);
+      margin-bottom: 10px;
+    }
+
+    .icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .admission {
+      background: #eaf0e8;
+    }
+
+    .announcement {
+      border-left: 4px solid var(--gold);
+    }
+
+    .gallery-box {
+      min-height: 150px;
+      background: #e9eee6;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: #526457;
+    }
+
+    .contact {
+      background: var(--green);
+      color: white;
+    }
+
+    .contact .section-title h2 {
+      color: white;
+    }
+
+    .contact .section-title p {
+      color: #d9e4db;
+    }
+
+    .contact-card {
+      background: #205038;
+      padding: 25px;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #092719;
+      color: #dce6de;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 14px;
+    }
+
+    footer span {
+      color: var(--gold);
+    }
+
+    @media (max-width: 700px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 60px 6%;
+      }
+
+      section {
+        padding: 45px 6%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">DAUD <span>TUTORIAL PORTAL</span></div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#programmes">Programmes</a>
+      <a href="#admissions">Admissions</a>
+      <a href="#news">News</a>
+      <a href="#contact">Contact</a>
+      <a href="#student-login" class="login-btn">Student Login</a>
+    </nav>
+  </header>
+
+  <!-- HERO / HOME -->
+  <section class="hero" id="home">
+    <p class="tag">Welcome to Daud Tutorial Portal</p>
+
+    <h1>Learning Today.<br>Leading Tomorrow.</h1>
+
+    <p>
+      A learning environment dedicated to knowledge, discipline,
+      academic growth, and preparing students for a brighter future.
+    </p>
+
+    <a href="#admissions" class="btn">Explore Admissions</a>
+    <a href="#programmes" class="btn-outline">Explore Programmes</a>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-title">
+      <h2>About Our Tutorial</h2>
+      <p>Discover who we are and what we stand for.</p>
+    </div>
+
+    <div class="about">
+      <p>
+        DAUD TUTORIAL PORTAL is designed to support students in their
+        educational journey through organized learning, academic guidance,
+        discipline, and a commitment to excellence.
+      </p>
+
+      <p>
+        Our goal is to create an environment where learners can develop
+        their knowledge, confidence, skills, and character.
+      </p>
+    </div>
+
+    <div class="cards" style="margin-top:30px;">
+      <div class="card">
+        <h3>Our Mission</h3>
+        <p>
+          To provide quality tutorial education and help learners develop
+          the knowledge and skills they need to succeed.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Our Vision</h3>
+        <p>
+          To become a trusted learning centre known for academic excellence,
+          discipline, and positive student development.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Our Values</h3>
+        <p>
+          Knowledge, discipline, integrity, respect, hard work,
+          responsibility, and excellence.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMMES -->
+  <section id="programmes" class="admission">
+    <div class="section-title">
+      <h2>Our Programmes</h2>
+      <p>Learning opportunities and tutorial programmes.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="icon">📚</div>
+        <h3>Academic Tutorials</h3>
+        <p>Organized academic support and subject learning for students.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">✍️</div>
+        <h3>Examination Preparation</h3>
+        <p>Learning support and preparation for important examinations.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">💡</div>
+        <h3>Skills Development</h3>
+        <p>Building confidence, knowledge, problem-solving, and learning skills.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🎓</div>
+        <h3>Extra Learning</h3>
+        <p>Additional learning opportunities to support student growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMISSIONS -->
+  <section id="admissions">
+    <div class="section-title">
+      <h2>Admissions & Registration</h2>
+      <p>Start your learning journey with us.</p>
+    </div>
+
+    <div class="about">
+      <div class="card">
+        <h3>Interested in Joining?</h3>
+        <p>
+          Registration information, admission requirements, programme details,
+          and registration procedures will be made available here.
+        </p>
+
+        <p>
+          Prospective students can contact the tutorial administration
+          for admission enquiries.
+        </p>
+
+        <a href="#contact" class="btn">Admission Enquiry</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS & ANNOUNCEMENTS -->
+  <section id="news" class="admission">
+    <div class="section-title">
+      <h2>News & Announcements</h2>
+      <p>Stay informed about tutorial activities.</p>
+    </div>
+
+    <div class="cards">
+      <div class="card announcement">
+        <h3>Welcome to DAUD TUTORIAL PORTAL</h3>
+        <p>
+          Our portal is being developed to make tutorial information,
+          student learning, and academic updates easier to access.
+        </p>
+      </div>
+
+      <div class="card announcement">
+        <h3>Upcoming Activities</h3>
+        <p>
+          Tutorial schedules, upcoming events, and important notices
+          will be published in this section.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="section-title">
+      <h2>Our Gallery</h2>
+      <p>Learning, activities, and memorable moments.</p>
+    </div>
+
+    <div class="cards">
+      <div class="gallery-box">Learning Activities</div>
+      <div class="gallery-box">Tutorial Sessions</div>
+      <div class="gallery-box">Events & Programmes</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>We welcome your questions and enquiries.</p>
+    </div>
+
+    <div class="cards">
+      <div class="contact-card">
+        <h3>📞 Phone</h3>
+        <p>Contact number to be added</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>✉️ Email</h3>
+        <p>Email address to be added</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>📍 Address</h3>
+        <p>Tutorial address to be added</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>💬 WhatsApp</h3>
+        <p>WhatsApp contact to be added</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STUDENT LOGIN PLACEHOLDER -->
+  <section id="student-login">
+    <div class="section-title">
+      <h2>Student Portal</h2>
+      <p>The student login and dashboard will be developed in a later stage.</p>
+    </div>
+
+    <div style="text-align:center;">
+      <p>Student access will be available when the portal login system is ready.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 <span>DAUD TUTORIAL PORTAL</span></p>
+    <p>Learning Today. Leading Tomorrow.</p>
+  </footer>
+
+</body>
+  </html>
+  
