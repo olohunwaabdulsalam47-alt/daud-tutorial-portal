@@ -2,260 +2,414 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DAUD TUTORIAL PORTAL</title>
-  <meta name="description" content="Daud Tutorial Portal - Learning Today. Leading Tomorrow.">
-  <meta name="theme-color" content="#123d2a">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DAUD TUTORIAL PORTAL</title>
+<meta name="description" content="DAUD TUTORIAL PORTAL - Learning Today. Leading Tomorrow.">
+<meta name="theme-color" content="#123d2a">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<style>
+:root {
+  --green: #123d2a;
+  --green2: #20553a;
+  --gold: #d6aa45;
+  --light: #f7f8f3;
+  --white: #ffffff;
+  --text: #24352b;
+  --muted: #66746a;
+}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f8f8f3;
-      color: #203328;
-      line-height: 1.6;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-    :root {
-      --green: #123d2a;
-      --green2: #1c563a;
-      --gold: #d6aa45;
-      --white: #ffffff;
-      --light: #f8f8f3;
-    }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--light);
+  color: var(--text);
+  line-height: 1.65;
+}
 
-    header {
-      background: var(--green);
-      color: white;
-      padding: 15px 5%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
+a {
+  text-decoration: none;
+}
 
-    .brand {
-      font-size: 21px;
-      font-weight: bold;
-    }
+.container {
+  width: min(1120px, 92%);
+  margin: auto;
+}
 
-    .brand span {
-      color: var(--gold);
-    }
+/* HEADER */
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      align-items: center;
-    }
+header {
+  background: var(--green);
+  color: white;
+  padding: 13px 4%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 12px rgba(0,0,0,.12);
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-    }
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
 
-    nav a:hover {
-      color: var(--gold);
-    }
+/* DAUD LOGO */
 
-    .login-btn {
-      background: var(--gold);
-      color: var(--green);
-      padding: 9px 15px;
-      border-radius: 6px;
-      font-weight: bold;
-    }
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
 
-    .hero {
-      background: linear-gradient(135deg, #123d2a, #286044);
-      color: white;
-      padding: 85px 7%;
-      text-align: center;
-    }
+.logo-mark {
+  width: 48px;
+  height: 48px;
+}
 
-    .hero .tag {
-      color: var(--gold);
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+.logo-text {
+  color: white;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.2;
+}
 
-    .hero h1 {
-      font-size: clamp(32px, 6vw, 54px);
-      margin: 15px 0;
-      line-height: 1.2;
-    }
+.logo-text small {
+  display: block;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  margin-top: 3px;
+}
 
-    .hero p {
-      max-width: 700px;
-      margin: 0 auto 25px;
-      color: #e6eee8;
-    }
+/* NAVIGATION */
 
-    .btn {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--green);
-      padding: 12px 22px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      margin: 5px;
-    }
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
 
-    .btn-outline {
-      border: 1px solid white;
-      color: white;
-      padding: 12px 22px;
-      border-radius: 6px;
-      text-decoration: none;
-      display: inline-block;
-      margin: 5px;
-    }
+nav a {
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+}
 
-    section {
-      padding: 65px 7%;
-    }
+nav a:hover {
+  color: var(--gold);
+}
 
-    .section-title {
-      text-align: center;
-      margin-bottom: 35px;
-    }
+.login-link {
+  background: var(--gold);
+  color: var(--green) !important;
+  padding: 9px 13px;
+  border-radius: 6px;
+}
 
-    .section-title h2 {
-      font-size: 30px;
-      color: var(--green);
-    }
+/* HERO */
 
-    .section-title p {
-      color: #68756c;
-    }
+.hero {
+  background:
+    linear-gradient(120deg, rgba(10,40,25,.97), rgba(31,86,57,.92));
+  color: white;
+  text-align: center;
+  padding: 95px 20px;
+}
 
-    .about {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
+.hero-label {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13px;
+  font-weight: bold;
+}
 
-    .about p {
-      margin-bottom: 15px;
-    }
+.hero h1 {
+  font-size: clamp(34px, 6vw, 60px);
+  line-height: 1.15;
+  margin: 18px auto;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
+.hero p {
+  color: #e5eee7;
+  max-width: 700px;
+  margin: 0 auto 25px;
+}
 
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      border: 1px solid #e5e8df;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-    }
+.button {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 7px;
+  background: var(--gold);
+  color: var(--green);
+  font-weight: bold;
+  margin: 5px;
+  transition: .2s;
+}
 
-    .card h3 {
-      color: var(--green);
-      margin-bottom: 10px;
-    }
+.button:hover {
+  transform: translateY(-2px);
+  opacity: .92;
+}
 
-    .icon {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
+.button-outline {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+}
 
-    .admission {
-      background: #eaf0e8;
-    }
+/* GENERAL SECTIONS */
 
-    .announcement {
-      border-left: 4px solid var(--gold);
-    }
+section {
+  padding: 70px 0;
+}
 
-    .gallery-box {
-      min-height: 150px;
-      background: #e9eee6;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      color: #526457;
-    }
+.section-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
 
-    .contact {
-      background: var(--green);
-      color: white;
-    }
+.section-heading h2 {
+  color: var(--green);
+  font-size: 32px;
+  margin-bottom: 5px;
+}
 
-    .contact .section-title h2 {
-      color: white;
-    }
+.section-heading p {
+  color: var(--muted);
+}
 
-    .contact .section-title p {
-      color: #d9e4db;
-    }
+.about-text {
+  max-width: 850px;
+  text-align: center;
+  margin: 0 auto 30px;
+}
 
-    .contact-card {
-      background: #205038;
-      padding: 25px;
-      border-radius: 10px;
-    }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
 
-    footer {
-      background: #092719;
-      color: #dce6de;
-      text-align: center;
-      padding: 25px 10px;
-      font-size: 14px;
-    }
+.card {
+  background: white;
+  padding: 25px;
+  border: 1px solid #e5e9e1;
+  border-radius: 12px;
+  box-shadow: 0 5px 18px rgba(20,50,30,.045);
+}
 
-    footer span {
-      color: var(--gold);
-    }
+.card h3 {
+  color: var(--green);
+  margin-bottom: 10px;
+}
 
-    @media (max-width: 700px) {
-      header {
-        flex-direction: column;
-        gap: 15px;
-      }
+.card p {
+  color: #5e6b62;
+  font-size: 14px;
+}
 
-      nav {
-        justify-content: center;
-        gap: 12px;
-      }
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
 
-      nav a {
-        font-size: 13px;
-      }
+.soft-section {
+  background: #eaf0e8;
+}
 
-      .hero {
-        padding: 60px 6%;
-      }
+/* ADMISSIONS */
 
-      section {
-        padding: 45px 6%;
-      }
-    }
-  </style>
+.admission-box {
+  max-width: 850px;
+  margin: auto;
+  text-align: center;
+}
+
+/* ANNOUNCEMENTS */
+
+.notice {
+  border-left: 4px solid var(--gold);
+}
+
+/* GALLERY */
+
+.gallery-placeholder {
+  min-height: 180px;
+  border-radius: 12px;
+  background: #e8eee6;
+  border: 1px dashed #b8c8b9;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #536756;
+  text-align: center;
+  padding: 20px;
+}
+
+.gallery-placeholder span {
+  font-size: 36px;
+  margin-bottom: 8px;
+}
+
+/* CONTACT */
+
+.contact-section {
+  background: var(--green);
+  color: white;
+}
+
+.contact-section .section-heading h2 {
+  color: white;
+}
+
+.contact-section .section-heading p {
+  color: #dbe8df;
+}
+
+.contact-card {
+  background: #20543a;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.contact-card h3 {
+  margin-bottom: 8px;
+}
+
+.contact-card p {
+  color: #e0eae2;
+  font-size: 14px;
+}
+
+.contact-card a:not(.button) {
+  color: #ffdf86;
+  overflow-wrap: anywhere;
+}
+
+.whatsapp-button {
+  display: inline-block;
+  background: #25D366;
+  color: white !important;
+  font-weight: bold;
+  padding: 11px 16px;
+  border-radius: 8px;
+  margin-top: 12px;
+}
+
+/* STUDENT PORTAL */
+
+.student-box {
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+}
+
+/* FOOTER */
+
+footer {
+  background: #092719;
+  color: #dce6de;
+  text-align: center;
+  padding: 28px 15px;
+  font-size: 13px;
+}
+
+footer strong {
+  color: var(--gold);
+}
+
+/* FLOATING WHATSAPP */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 18px;
+  z-index: 9999;
+  background: #25D366;
+  color: white;
+  padding: 14px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 5px 18px rgba(0,0,0,.2);
+}
+
+.whatsapp-float:hover {
+  background: #128C7E;
+}
+
+/* MOBILE */
+
+@media (max-width: 760px) {
+  .header-inner {
+    flex-direction: column;
+  }
+
+  nav {
+    gap: 11px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 65px 18px;
+  }
+
+  section {
+    padding: 50px 0;
+  }
+
+  .section-heading h2 {
+    font-size: 27px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .whatsapp-float {
+    bottom: 14px;
+    right: 12px;
+    padding: 12px 15px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="brand">DAUD <span>TUTORIAL PORTAL</span></div>
+<!-- HEADER -->
+<header>
+  <div class="container header-inner">
+
+    <a href="#home" class="brand-logo">
+      <svg class="logo-mark" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1" y="1" width="58" height="58" rx="14" fill="#d6aa45"/>
+        <path d="M13 15 H29 C40 15 47 22 47 30 C47 38 40 45 29 45 H13 Z" fill="#123d2a"/>
+        <path d="M21 23 H29 C34 23 38 26 38 30 C38 34 34 37 29 37 H21 Z" fill="#d6aa45"/>
+        <path d="M17 49 H43" stroke="#123d2a" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+
+      <span class="logo-text">
+        DAUD
+        <small>TUTORIAL PORTAL</small>
+      </span>
+    </a>
 
     <nav>
       <a href="#home">Home</a>
@@ -263,175 +417,213 @@
       <a href="#programmes">Programmes</a>
       <a href="#admissions">Admissions</a>
       <a href="#news">News</a>
+      <a href="#gallery">Gallery</a>
       <a href="#contact">Contact</a>
-      <a href="#student-login" class="login-btn">Student Login</a>
+      <a href="#student-login" class="login-link">Student Portal</a>
     </nav>
-  </header>
 
-  <!-- HERO / HOME -->
-  <section class="hero" id="home">
-    <p class="tag">Welcome to Daud Tutorial Portal</p>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <p class="hero-label">Welcome to DAUD TUTORIAL PORTAL</p>
 
     <h1>Learning Today.<br>Leading Tomorrow.</h1>
 
     <p>
-      A learning environment dedicated to knowledge, discipline,
-      academic growth, and preparing students for a brighter future.
+      A learning environment committed to knowledge, discipline,
+      academic growth, confidence, and preparing learners for a brighter future.
     </p>
 
-    <a href="#admissions" class="btn">Explore Admissions</a>
-    <a href="#programmes" class="btn-outline">Explore Programmes</a>
-  </section>
+    <a href="#admissions" class="button">Explore Admissions</a>
+    <a href="#programmes" class="button button-outline">Our Programmes</a>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-title">
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+
+    <div class="section-heading">
       <h2>About Our Tutorial</h2>
       <p>Discover who we are and what we stand for.</p>
     </div>
 
-    <div class="about">
+    <div class="about-text">
       <p>
-        DAUD TUTORIAL PORTAL is designed to support students in their
-        educational journey through organized learning, academic guidance,
-        discipline, and a commitment to excellence.
+        DAUD TUTORIAL PORTAL is dedicated to supporting students through
+        organized learning, academic guidance, discipline, and a commitment
+        to educational excellence.
       </p>
 
       <p>
-        Our goal is to create an environment where learners can develop
-        their knowledge, confidence, skills, and character.
+        We aim to create an environment where learners can build knowledge,
+        confidence, skills, and good character.
       </p>
     </div>
 
-    <div class="cards" style="margin-top:30px;">
+    <div class="cards">
       <div class="card">
         <h3>Our Mission</h3>
         <p>
-          To provide quality tutorial education and help learners develop
-          the knowledge and skills they need to succeed.
+          To provide quality tutorial education and empower learners with
+          knowledge and skills for success.
         </p>
       </div>
 
       <div class="card">
         <h3>Our Vision</h3>
         <p>
-          To become a trusted learning centre known for academic excellence,
-          discipline, and positive student development.
+          To become a trusted learning centre recognized for academic
+          excellence, discipline, and student development.
         </p>
       </div>
 
       <div class="card">
         <h3>Our Values</h3>
         <p>
-          Knowledge, discipline, integrity, respect, hard work,
+          Knowledge, integrity, discipline, respect, hard work,
           responsibility, and excellence.
         </p>
       </div>
     </div>
-  </section>
 
-  <!-- PROGRAMMES -->
-  <section id="programmes" class="admission">
-    <div class="section-title">
+  </div>
+</section>
+
+<!-- PROGRAMMES -->
+<section class="soft-section" id="programmes">
+  <div class="container">
+
+    <div class="section-heading">
       <h2>Our Programmes</h2>
-      <p>Learning opportunities and tutorial programmes.</p>
+      <p>Learning opportunities designed to support student progress.</p>
     </div>
 
     <div class="cards">
       <div class="card">
-        <div class="icon">📚</div>
+        <div class="card-icon">📚</div>
         <h3>Academic Tutorials</h3>
-        <p>Organized academic support and subject learning for students.</p>
+        <p>Subject-based tutorial support and structured learning.</p>
       </div>
 
       <div class="card">
-        <div class="icon">✍️</div>
+        <div class="card-icon">✍️</div>
         <h3>Examination Preparation</h3>
-        <p>Learning support and preparation for important examinations.</p>
+        <p>Preparation and learning support for important examinations.</p>
       </div>
 
       <div class="card">
-        <div class="icon">💡</div>
+        <div class="card-icon">💡</div>
         <h3>Skills Development</h3>
-        <p>Building confidence, knowledge, problem-solving, and learning skills.</p>
+        <p>Encouraging confidence, problem-solving, and learning skills.</p>
       </div>
 
       <div class="card">
-        <div class="icon">🎓</div>
+        <div class="card-icon">🎓</div>
         <h3>Extra Learning</h3>
-        <p>Additional learning opportunities to support student growth.</p>
+        <p>Additional educational opportunities for learners.</p>
       </div>
     </div>
-  </section>
 
-  <!-- ADMISSIONS -->
-  <section id="admissions">
-    <div class="section-title">
+  </div>
+</section>
+
+<!-- ADMISSIONS -->
+<section id="admissions">
+  <div class="container">
+
+    <div class="section-heading">
       <h2>Admissions & Registration</h2>
-      <p>Start your learning journey with us.</p>
+      <p>Take the first step toward your learning journey.</p>
     </div>
 
-    <div class="about">
-      <div class="card">
-        <h3>Interested in Joining?</h3>
-        <p>
-          Registration information, admission requirements, programme details,
-          and registration procedures will be made available here.
-        </p>
+    <div class="admission-box card">
+      <h3>Interested in Joining DAUD TUTORIAL?</h3>
 
-        <p>
-          Prospective students can contact the tutorial administration
-          for admission enquiries.
-        </p>
+      <p>
+        Enquire about registration, admission requirements, available
+        programmes, and learning arrangements.
+      </p>
 
-        <a href="#contact" class="btn">Admission Enquiry</a>
-      </div>
+      <p>
+        Contact our administration through WhatsApp for registration enquiries.
+      </p>
+
+      <a href="#" id="admission-whatsapp" class="whatsapp-button" target="_blank">
+        Enquire on WhatsApp
+      </a>
     </div>
-  </section>
 
-  <!-- NEWS & ANNOUNCEMENTS -->
-  <section id="news" class="admission">
-    <div class="section-title">
+  </div>
+</section>
+
+<!-- NEWS -->
+<section class="soft-section" id="news">
+  <div class="container">
+
+    <div class="section-heading">
       <h2>News & Announcements</h2>
-      <p>Stay informed about tutorial activities.</p>
+      <p>Important information and updates from our tutorial.</p>
     </div>
 
     <div class="cards">
-      <div class="card announcement">
+      <div class="card notice">
         <h3>Welcome to DAUD TUTORIAL PORTAL</h3>
         <p>
-          Our portal is being developed to make tutorial information,
-          student learning, and academic updates easier to access.
+          Our portal is designed to make tutorial information and
+          learning updates accessible to our visitors.
         </p>
       </div>
 
-      <div class="card announcement">
+      <div class="card notice">
         <h3>Upcoming Activities</h3>
         <p>
-          Tutorial schedules, upcoming events, and important notices
-          will be published in this section.
+          Schedules, programmes, activities, and announcements
+          will be published here.
         </p>
       </div>
     </div>
-  </section>
 
-  <!-- GALLERY -->
-  <section id="gallery">
-    <div class="section-title">
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+
+    <div class="section-heading">
       <h2>Our Gallery</h2>
       <p>Learning, activities, and memorable moments.</p>
     </div>
 
     <div class="cards">
-      <div class="gallery-box">Learning Activities</div>
-      <div class="gallery-box">Tutorial Sessions</div>
-      <div class="gallery-box">Events & Programmes</div>
-    </div>
-  </section>
+      <div class="gallery-placeholder">
+        <span>📚</span>
+        Learning Activities
+      </div>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <div class="section-title">
+      <div class="gallery-placeholder">
+        <span>📝</span>
+        Tutorial Sessions
+      </div>
+
+      <div class="gallery-placeholder">
+        <span>🏆</span>
+        Events & Programmes
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="container">
+
+    <div class="section-heading">
       <h2>Contact Us</h2>
       <p>We welcome your questions and enquiries.</p>
     </div>
@@ -439,44 +631,94 @@
     <div class="cards">
       <div class="contact-card">
         <h3>📞 Phone</h3>
-        <p>Contact number to be added</p>
-      </div>
-
-      <div class="contact-card">
-        <h3>✉️ Email</h3>
-        <p>Email address to be added</p>
-      </div>
-
-      <div class="contact-card">
-        <h3>📍 Address</h3>
-        <p>Tutorial address to be added</p>
+        <p id="portal-phone">09027398199</p>
       </div>
 
       <div class="contact-card">
         <h3>💬 WhatsApp</h3>
-        <p>WhatsApp contact to be added</p>
+        <p>Chat directly with our administration.</p>
+        <a href="#" id="contact-whatsapp" class="whatsapp-button" target="_blank">
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <div class="contact-card">
+        <h3>✉️ Email</h3>
+        <p>Email contact will be added.</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>📍 Location</h3>
+        <p>Our tutorial address and map will be added.</p>
       </div>
     </div>
-  </section>
 
-  <!-- STUDENT LOGIN PLACEHOLDER -->
-  <section id="student-login">
-    <div class="section-title">
+  </div>
+</section>
+
+<!-- STUDENT PORTAL PLACEHOLDER -->
+<section id="student-login">
+  <div class="container">
+
+    <div class="section-heading">
       <h2>Student Portal</h2>
-      <p>The student login and dashboard will be developed in a later stage.</p>
+      <p>Student access and learning services.</p>
     </div>
 
-    <div style="text-align:center;">
-      <p>Student access will be available when the portal login system is ready.</p>
+    <div class="student-box card">
+      <h3>Student Login System</h3>
+      <p>
+        The student login, personal dashboard, learning resources,
+        attendance, results, and other student services will be introduced
+        as the portal development continues.
+      </p>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2026 <span>DAUD TUTORIAL PORTAL</span></p>
+  </div>
+</section>
+
+<!-- FLOATING WHATSAPP -->
+<a href="#" id="whatsapp-float" class="whatsapp-float" target="_blank">
+  ☎ WhatsApp
+</a>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <p>&copy; <span id="year"></span> <strong>DAUD TUTORIAL PORTAL</strong></p>
     <p>Learning Today. Leading Tomorrow.</p>
-  </footer>
+  </div>
+</footer>
+
+<!-- PORTAL SETTINGS -->
+<script>
+/* ===========================================
+   DAUD TUTORIAL PORTAL - EDITABLE SETTINGS
+
+   CHANGE THE WHATSAPP NUMBER HERE ANYTIME.
+
+   Nigerian number format:
+   09027398199 becomes 2349027398199
+
+   Do not add +, spaces, or the first 0.
+=========================================== */
+
+const PORTAL_WHATSAPP_NUMBER = "2349027398199";
+
+const PORTAL_WHATSAPP_MESSAGE =
+  "Hello DAUD TUTORIAL PORTAL. I would like to make an enquiry.";
+
+const portalWhatsAppURL =
+  "https://wa.me/" + PORTAL_WHATSAPP_NUMBER +
+  "?text=" + encodeURIComponent(PORTAL_WHATSAPP_MESSAGE);
+
+document.getElementById("contact-whatsapp").href = portalWhatsAppURL;
+document.getElementById("admission-whatsapp").href = portalWhatsAppURL;
+document.getElementById("whatsapp-float").href = portalWhatsAppURL;
+
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
 </body>
   </html>
-  
+          
