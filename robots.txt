@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://olohunwa47-alt.github.io/daud-tutorial-portal/sitemap.xml
